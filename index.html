@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SlideKilat — Presentasi profesional siap dalam 5 menit, tersedia 24 jam sehari 7 hari seminggu. Kirim dokumen lewat WhatsApp, terima slide keren langsung di chat kamu.">
+<title>SlideKilat — Presentasi Profesional dalam 5 Menit, 24 Jam ⚡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap">
+
+<style>
+/* ── Brand tokens ── */
+:root {
+  --primary:      #FF5A1F;
+  --primary-dk:   #E04A12;
+  --primary-lt:   #FFF0E8;
+  --primary-pale: #FFF7F3;
+  --ink:          #1A1A1A;
+  --ink-60:       rgba(26,26,26,0.60);
+  --ink-35:       rgba(26,26,26,0.35);
+  --ink-12:       rgba(26,26,26,0.12);
+  --ink-06:       rgba(26,26,26,0.06);
+  --cream:        #FFF4E6;
+  --butter:       #FFC759;
+  --butter-dk:    #E8A800;
+  --paper:        #FAF7F1;
+  --white:        #FFFFFF;
+  --mint:         #0E8A52;
+  --mint-lt:      rgba(14,138,82,0.12);
+  --wa:           #25D366;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body:    'Geist', system-ui, sans-serif;
+  --font-mono:    'Geist Mono', ui-monospace, monospace;
+
+  --r-sm:   8px;
+  --r-md:   16px;
+  --r-lg:   24px;
+  --r-full: 9999px;
+
+  --shadow-card:  0 2px 0 var(--ink-06), 0 4px 24px rgba(26,26,26,0.07);
+  --shadow-hover: 0 8px 40px rgba(26,26,26,0.16);
+}
+
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section    { padding: 96px 0; }
+.text-center { text-align: center; }
+
+/* ── Tag pill ── */
+.tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--ink); opacity: 0.55;
+  margin-bottom: 16px;
+}
+.tag-dot {
+  width: 7px; height: 7px; border-radius: 2px;
+  background: var(--primary); display: inline-block; flex-shrink: 0;
+}
+
+/* ── Section headings ── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 46px);
+  font-weight: 800; line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ink); margin-bottom: 14px;
+}
+.section-title .hl { color: var(--primary); font-style: italic; }
+.section-sub {
+  font-size: 17px; color: var(--ink-60);
+  max-width: 560px; margin: 0 auto 52px; line-height: 1.7;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-body); font-size: 15px; font-weight: 700;
+  padding: 14px 26px; border-radius: var(--r-full);
+  border: none; cursor: pointer; text-decoration: none;
+  transition: transform .18s, box-shadow .18s, background .15s;
+  white-space: nowrap; letter-spacing: -0.01em;
+}
+.btn:hover  { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.btn:active { transform: scale(.97); }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dk); }
+.btn-ink    { background: var(--ink); color: #fff; }
+.btn-wa     { background: var(--wa); color: #fff; }
+.btn-outline {
+  background: transparent; color: var(--ink);
+  border: 1.5px solid var(--ink-35);
+}
+.btn-outline:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn-butter { background: var(--butter); color: var(--ink); }
+.btn-ghost  {
+  background: rgba(26,26,26,0.08); color: var(--ink);
+  border: 1.5px solid var(--ink-12);
+}
+.btn-ghost:hover { background: rgba(26,26,26,0.14); }
+
+/* ── PROMO BAR ── */
+.promo-bar {
+  background: var(--primary); padding: 11px 0;
+  text-align: center; position: relative; z-index: 101;
+}
+.promo-bar-inner {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; flex-wrap: wrap;
+}
+.promo-bar-text {
+  font-family: var(--font-display); font-size: 14px;
+  font-weight: 800; color: #fff; letter-spacing: -0.02em;
+}
+.promo-pill {
+  background: rgba(255,255,255,0.2); color: #fff;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: var(--r-full);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.promo-bar a {
+  color: #fff; font-family: var(--font-mono); font-size: 12px;
+  font-weight: 700; text-decoration: underline; text-underline-offset: 2px;
+  letter-spacing: 0.03em;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,247,241,0.92);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--ink-06);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px; gap: 24px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; flex-shrink: 0;
+}
+.nav-wordmark {
+  font-family: var(--font-display); font-size: 20px;
+  font-weight: 800; color: var(--ink); letter-spacing: -0.04em;
+}
+.nav-wordmark em { color: var(--primary); font-style: italic; }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a {
+  text-decoration: none; font-size: 14px; font-weight: 600;
+  color: var(--ink-60); transition: color .15s; letter-spacing: -0.01em;
+}
+.nav-links a:hover { color: var(--ink); }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--ink); border-radius: 2px;
+}
+.mobile-menu {
+  display: none; background: var(--paper);
+  border-top: 1px solid var(--ink-06); padding: 16px 24px 24px;
+}
+.mobile-menu a {
+  display: block; padding: 13px 0; font-size: 15px;
+  font-weight: 700; color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--ink-06); letter-spacing: -0.01em;
+}
+.mobile-menu a:last-of-type { border: none; margin-bottom: 14px; }
+
+/* ── LOGO SVG (04 · slide stack + bolt) ── */
+.logo-mark-svg { flex-shrink: 0; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--cream);
+  position: relative; overflow: hidden;
+  padding: 100px 0 88px;
+  border-bottom: 1px solid var(--ink-06);
+}
+/* grid pattern */
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(var(--ink-06) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ink-06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-glow {
+  position: absolute; top: -120px; right: -80px;
+  width: 540px; height: 540px; pointer-events: none;
+  background: radial-gradient(circle, rgba(255,90,31,0.14) 0%, transparent 68%);
+}
+.hero-glow2 {
+  position: absolute; bottom: -80px; left: -60px;
+  width: 360px; height: 360px; pointer-events: none;
+  background: radial-gradient(circle, rgba(255,199,89,0.18) 0%, transparent 68%);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 48px; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--ink); color: var(--cream);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  padding: 7px 14px; border-radius: var(--r-full);
+  margin-bottom: 24px; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.live-dot {
+  width: 8px; height: 8px; background: var(--primary);
+  border-radius: 50%; flex-shrink: 0;
+  animation: pdot 1.8s ease-in-out infinite;
+}
+@keyframes pdot { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.6);} }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5.5vw, 62px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -0.045em;
+  color: var(--ink); margin-bottom: 20px;
+}
+.hero-title .hl {
+  color: var(--primary); font-style: italic;
+  position: relative; display: inline-block;
+}
+.hero-sub {
+  font-size: 18px; color: var(--ink-60);
+  line-height: 1.7; margin-bottom: 36px; max-width: 480px;
+}
+.hero-btns {
+  display: flex; align-items: center;
+  gap: 12px; flex-wrap: wrap; margin-bottom: 48px;
+}
+.hero-stats { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.hstat-num {
+  font-family: var(--font-display); font-size: 20px;
+  font-weight: 800; color: var(--ink); line-height: 1;
+  letter-spacing: -0.03em;
+}
+.hstat-label {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--ink-60); letter-spacing: 0.04em; margin-top: 2px;
+}
+.hstat-div { width: 1px; height: 36px; background: var(--ink-12); }
+
+/* Five badge */
+.five-badge {
+  width: 174px; height: 174px;
+  background: var(--primary); border-radius: 36px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  transform: rotate(6deg);
+  animation: fbadge 3.4s ease-in-out infinite;
+  box-shadow: 0 16px 56px rgba(255,90,31,0.38);
+  flex-shrink: 0;
+}
+@keyframes fbadge {
+  0%,100% { transform: rotate(6deg) translateY(0); }
+  50%      { transform: rotate(6deg) translateY(-10px); }
+}
+.five-num {
+  font-family: var(--font-display); font-size: 88px;
+  font-weight: 800; color: #fff; line-height: 1;
+  letter-spacing: -0.05em;
+}
+.five-label {
+  font-family: var(--font-mono); font-size: 13px;
+  font-weight: 700; color: rgba(255,255,255,0.75);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* ── MARQUEE ── */
+.marquee-strip {
+  background: var(--butter); padding: 13px 0;
+  overflow: hidden; white-space: nowrap;
+  border-top: 1.5px solid rgba(26,26,26,0.08);
+  border-bottom: 1.5px solid rgba(26,26,26,0.08);
+}
+.marquee-track {
+  display: inline-flex;
+  animation: mq 24s linear infinite;
+}
+.mitem {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-right: 48px; font-family: var(--font-mono);
+  font-size: 12px; font-weight: 700; color: var(--ink);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.mdot { width: 6px; height: 6px; background: var(--ink); border-radius: 2px; opacity: .3; }
+@keyframes mq { from{transform:translateX(0);}to{transform:translateX(-50%);} }
+
+/* ── HOW IT WORKS ── */
+.how-bg { background: var(--white); }
+.steps {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 20px; position: relative;
+}
+.steps::before {
+  content: ''; position: absolute;
+  top: 40px; left: calc(16.66% + 20px); right: calc(16.66% + 20px); height: 1.5px;
+  background: repeating-linear-gradient(90deg, var(--primary) 0, var(--primary) 7px, transparent 7px, transparent 16px);
+}
+.step {
+  background: var(--paper); border-radius: var(--r-lg);
+  padding: 32px 24px; text-align: center;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--ink-06);
+  transition: transform .2s, box-shadow .2s;
+}
+.step:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.step-n {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 20px; font-weight: 800;
+  margin: 0 auto 20px;
+}
+.s1 .step-n { background: var(--primary-lt); color: var(--primary); }
+.s2 .step-n { background: var(--ink); color: var(--butter); }
+.s3 .step-n { background: var(--mint-lt); color: var(--mint); }
+.step-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+.step-title {
+  font-family: var(--font-display); font-size: 18px;
+  font-weight: 800; color: var(--ink); margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.step-desc { font-size: 14px; color: var(--ink-60); line-height: 1.65; }
+
+/* ── PORTFOLIO ── */
+.port-bg { background: var(--paper); }
+.port-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.port-item {
+  border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: var(--shadow-card); border: 1px solid var(--ink-06);
+  transition: transform .2s, box-shadow .2s; cursor: pointer;
+}
+.port-item:hover { transform: translateY(-4px) scale(1.01); box-shadow: var(--shadow-hover); }
+.smock { width: 100%; aspect-ratio: 16/9; display: flex; flex-direction: column; }
+.smock-head { padding: 14px 16px 10px; flex-shrink: 0; }
+.sbar  { height: 10px; border-radius: 4px; width: 58%; margin-bottom: 6px; }
+.sbar2 { height: 7px; border-radius: 3px; width: 38%; opacity: .45; }
+.smock-body {
+  flex: 1; padding: 10px 16px 14px;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.sline { height: 6px; border-radius: 3px; opacity: .35; }
+.scols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; flex: 1; }
+.sbox  { border-radius: 6px; opacity: .28; }
+.port-label {
+  padding: 12px 16px; background: var(--white);
+  border-top: 1px solid var(--ink-06);
+}
+.port-name { font-family: var(--font-display); font-size: 13px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+.port-time { font-family: var(--font-mono); font-size: 11px; color: var(--ink-35); margin-top: 2px; }
+
+/* ── PROMO SECTION ── */
+.promo-section {
+  background: linear-gradient(135deg, #FF7A4A 0%, var(--primary) 50%, #E0431A 100%);
+  padding: 80px 0; position: relative; overflow: hidden;
+}
+.promo-section::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+.promo-inner {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
+}
+.promo-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35);
+  color: #fff; font-family: var(--font-mono); font-size: 11px;
+  font-weight: 700; padding: 7px 14px; border-radius: var(--r-full);
+  margin-bottom: 18px; letter-spacing: 0.09em; text-transform: uppercase;
+}
+.promo-title {
+  font-family: var(--font-display); font-size: clamp(28px,4vw,44px);
+  font-weight: 800; color: #fff; line-height: 1.1;
+  letter-spacing: -0.04em; margin-bottom: 14px;
+}
+.promo-sub {
+  font-size: 16px; color: rgba(255,255,255,0.85);
+  line-height: 1.65; margin-bottom: 26px; max-width: 520px;
+}
+.promo-conds {
+  font-family: var(--font-mono); font-size: 11.5px;
+  color: rgba(255,255,255,0.62); margin-top: 14px;
+  line-height: 1.5; letter-spacing: 0.01em;
+}
+.promo-price-box {
+  background: #fff; border-radius: var(--r-lg);
+  padding: 32px 28px; text-align: center; flex-shrink: 0;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.2); min-width: 220px;
+}
+.promo-was {
+  font-size: 15px; color: var(--ink-35);
+  text-decoration: line-through; text-decoration-thickness: 2px;
+  font-family: var(--font-body); font-weight: 500; margin-bottom: 2px;
+}
+.promo-label-top {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--primary); margin-bottom: 6px;
+}
+.promo-amount {
+  font-family: var(--font-display); font-size: 56px;
+  font-weight: 800; color: var(--primary); line-height: 1;
+  letter-spacing: -0.05em;
+}
+.promo-period {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--ink-35); margin-bottom: 14px;
+}
+.promo-save-pill {
+  display: inline-block; background: var(--primary-lt);
+  color: var(--primary); font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: var(--r-full); margin-bottom: 18px;
+}
+.promo-feats { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.promo-feats li {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; color: var(--ink-60);
+}
+.promo-feats li::before { content: '✓'; color: var(--mint); font-weight: 800; }
+
+/* ── PRICING ── */
+.pricing-bg { background: var(--white); }
+.price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; align-items: start; }
+.pcard {
+  background: var(--paper); border-radius: var(--r-lg);
+  padding: 28px 24px 32px; box-shadow: var(--shadow-card);
+  border: 1px solid var(--ink-06);
+  transition: transform .2s, box-shadow .2s; position: relative;
+}
+.pcard:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.pcard.hot {
+  background: var(--ink); transform: scale(1.035);
+  border-color: var(--ink);
+}
+.pcard.hot:hover { transform: scale(1.035) translateY(-4px); }
+.hot-badge {
+  position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+  background: var(--butter); color: var(--ink);
+  font-family: var(--font-body); font-size: 12px; font-weight: 800;
+  padding: 5px 16px; border-radius: var(--r-full); white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(255,199,89,0.5);
+}
+.p-plan {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-35); margin-bottom: 4px;
+}
+.pcard.hot .p-plan { color: rgba(255,244,230,0.4); }
+.p-name {
+  font-family: var(--font-display); font-size: 26px;
+  font-weight: 800; color: var(--ink); margin-bottom: 4px;
+  letter-spacing: -0.03em;
+}
+.pcard.hot .p-name { color: var(--cream); }
+.p-desc { font-size: 13px; color: var(--ink-35); margin-bottom: 20px; line-height: 1.5; }
+.pcard.hot .p-desc { color: rgba(255,244,230,0.45); }
+.p-price-block {
+  margin-bottom: 20px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--ink-06);
+}
+.pcard.hot .p-price-block { border-color: rgba(255,244,230,0.1); }
+.p-amount {
+  font-family: var(--font-display); font-size: 40px;
+  font-weight: 800; color: var(--ink); line-height: 1;
+  letter-spacing: -0.04em;
+}
+.pcard.hot .p-amount { color: var(--butter); }
+.p-unit { font-family: var(--font-mono); font-size: 12px; color: var(--ink-35); margin-top: 5px; }
+.pcard.hot .p-unit { color: rgba(255,244,230,0.4); }
+.p-features {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 10px; margin-bottom: 26px;
+}
+.p-features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: var(--ink-60);
+}
+.pcard.hot .p-features li { color: rgba(255,244,230,0.75); }
+.fcheck {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--mint-lt); display: flex; align-items: center; justify-content: center;
+  font-size: 10px; flex-shrink: 0; margin-top: 1px; color: var(--mint); font-weight: 800;
+}
+.pcard.hot .fcheck { background: rgba(14,138,82,0.2); }
+.pcard .btn { width: 100%; justify-content: center; }
+.addon {
+  margin-top: 28px; background: var(--cream);
+  border: 1.5px dashed var(--butter); border-radius: var(--r-lg);
+  padding: 24px 28px; display: flex; align-items: center;
+  justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.addon-tag {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--primary); margin-bottom: 4px;
+}
+.addon-name {
+  font-family: var(--font-display); font-size: 20px;
+  font-weight: 800; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.02em;
+}
+.addon-desc { font-size: 14px; color: var(--ink-60); }
+.addon-price {
+  font-family: var(--font-display); font-size: 28px;
+  font-weight: 800; color: var(--ink); white-space: nowrap; letter-spacing: -0.03em;
+}
+.addon-price span { font-size: 13px; font-weight: 500; color: var(--ink-35); }
+
+/* ── TESTIMONIALS ── */
+.tgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.tcard {
+  background: var(--white); border-radius: var(--r-lg);
+  padding: 24px; box-shadow: var(--shadow-card); border: 1px solid var(--ink-06);
+  transition: transform .2s, box-shadow .2s; text-align: left;
+}
+.tcard:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+.tstars { color: var(--butter); font-size: 15px; margin-bottom: 14px; letter-spacing: 2px; }
+.tquote {
+  font-family: var(--font-display); font-size: 48px; font-weight: 800;
+  color: var(--primary-lt); line-height: .4; display: block; margin-bottom: 12px;
+}
+.ttext {
+  font-size: 15px; color: var(--ink); line-height: 1.65;
+  margin-bottom: 20px; font-style: italic; opacity: .85;
+}
+.tfooter { display: flex; align-items: center; gap: 12px; }
+.tavatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 14px; font-weight: 800; flex-shrink: 0;
+}
+.tname { font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+.trole { font-family: var(--font-mono); font-size: 11px; color: var(--ink-35); margin-top: 2px; }
+
+/* ── ABOUT ── */
+.about-bg { background: var(--ink); }
+.about-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 72px; align-items: center;
+}
+.about-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,90,31,0.15); border: 1px solid rgba(255,90,31,0.3);
+  color: var(--primary); font-family: var(--font-mono); font-size: 11px;
+  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 5px 13px; border-radius: var(--r-full); margin-bottom: 20px;
+}
+.about-title {
+  font-family: var(--font-display); font-size: clamp(26px,4vw,40px);
+  font-weight: 800; color: var(--cream); line-height: 1.15;
+  letter-spacing: -0.04em; margin-bottom: 22px;
+}
+.about-title .hl { color: var(--primary); font-style: italic; }
+.about-p { font-size: 16px; color: rgba(255,244,230,0.6); line-height: 1.8; margin-bottom: 14px; }
+.astat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.astat {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,244,230,0.08);
+  border-radius: var(--r-md); padding: 24px 20px; text-align: center;
+}
+.astat.acc { background: var(--primary); border-color: var(--primary); }
+.astat-num {
+  font-family: var(--font-display); font-size: 36px;
+  font-weight: 800; color: var(--cream); margin-bottom: 4px;
+  line-height: 1; letter-spacing: -0.04em;
+}
+.astat.acc .astat-num { color: #fff; }
+.astat-label { font-family: var(--font-mono); font-size: 11px; color: rgba(255,244,230,0.45); }
+.astat.acc .astat-label { color: rgba(255,255,255,0.65); }
+
+/* ── FAQ ── */
+.faq-bg { background: var(--paper); }
+.faq-list {
+  max-width: 720px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.faq-item {
+  background: var(--white); border-radius: var(--r-md);
+  box-shadow: var(--shadow-card); border: 1px solid var(--ink-06); overflow: hidden;
+}
+.faq-q {
+  width: 100%; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px;
+  padding: 19px 22px; background: none; border: none;
+  cursor: pointer; text-align: left;
+  font-family: var(--font-display); font-size: 16px;
+  font-weight: 700; color: var(--ink); letter-spacing: -0.02em;
+  transition: background .15s;
+}
+.faq-q:hover { background: var(--paper); }
+.faq-icon {
+  width: 28px; height: 28px; background: var(--primary-lt);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 17px; flex-shrink: 0; transition: transform .25s, background .2s;
+  color: var(--primary); font-weight: 800; line-height: 1;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--primary); color: #fff; }
+.faq-ans { max-height: 0; overflow: hidden; transition: max-height .32s ease; }
+.faq-ans-inner {
+  padding: 16px 22px 20px; font-size: 15px;
+  color: var(--ink-60); line-height: 1.7;
+  border-top: 1px solid var(--ink-06);
+}
+
+/* ── FINAL CTA ── */
+.cta-sec {
+  background: var(--butter); padding: 96px 0;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-dots {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(26,26,26,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.cta-title {
+  font-family: var(--font-display); font-size: clamp(30px,5.5vw,56px);
+  font-weight: 800; color: var(--ink); margin-bottom: 14px;
+  letter-spacing: -0.045em; position: relative;
+}
+.cta-sub {
+  font-size: 18px; color: var(--ink-60);
+  margin-bottom: 36px; position: relative; line-height: 1.6;
+}
+
+/* ── FOOTER ── */
+footer { background: var(--ink); color: rgba(255,244,230,0.5); padding: 52px 0 32px; }
+.foot-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px; margin-bottom: 40px;
+}
+.foot-brand-p {
+  font-size: 14px; line-height: 1.7; margin-top: 14px;
+  max-width: 280px; color: rgba(255,244,230,0.5);
+}
+.foot-col-title {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  color: var(--cream); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;
+}
+.foot-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.foot-links a {
+  font-size: 14px; color: rgba(255,244,230,0.45);
+  text-decoration: none; transition: color .15s;
+}
+.foot-links a:hover { color: var(--butter); }
+.foot-bottom {
+  border-top: 1px solid rgba(255,244,230,0.07);
+  padding-top: 24px; display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13px;
+}
+.foot-bottom span { color: var(--primary); }
+
+/* ── 24H badge ── */
+.badge-24h {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(14,138,82,0.12); border: 1.5px solid rgba(14,138,82,0.3);
+  color: var(--mint); font-family: var(--font-mono); font-size: 11px;
+  font-weight: 700; padding: 5px 12px; border-radius: var(--r-full);
+  letter-spacing: 0.04em;
+}
+.badge-24h-dot {
+  width: 7px; height: 7px; background: var(--mint);
+  border-radius: 50%; animation: pdot 2s ease-in-out infinite;
+}
+
+/* ── Animations ── */
+@keyframes fadeup { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
+.anim { opacity: 0; animation: fadeup .5s ease forwards; }
+.d1{animation-delay:.1s;}.d2{animation-delay:.2s;}.d3{animation-delay:.3s;}.d4{animation-delay:.4s;}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-links,.nav-cta-d { display: none; }
+  .hamburger { display: flex; }
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-sub { margin: 0 auto 36px; }
+  .hero-btns { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .five-badge { display: none; }
+  .steps { grid-template-columns: 1fr; }
+  .steps::before { display: none; }
+  .port-grid { grid-template-columns: 1fr 1fr; }
+  .price-grid { grid-template-columns: 1fr; }
+  .pcard.hot { transform: scale(1); }
+  .pcard.hot:hover { transform: translateY(-4px); }
+  .tgrid { grid-template-columns: 1fr; }
+  .about-inner { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr; gap: 32px; }
+  .foot-bottom { flex-direction: column; text-align: center; }
+  .addon { flex-direction: column; text-align: center; }
+  .promo-inner { grid-template-columns: 1fr; }
+  .promo-price-box { width: 100%; }
+  .promo-sub { margin: 0 auto 26px; }
+}
+@media (max-width: 480px) {
+  .port-grid { grid-template-columns: 1fr; }
+  .section { padding: 64px 0; }
+  .hero { padding: 72px 0 64px; }
+  .hstat-div { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- PROMO BAR -->
+<div class="promo-bar">
+  <div class="promo-bar-inner">
+    <span class="promo-pill">🔥 Promo Peluncuran</span>
+    <span class="promo-bar-text">Order pertamamu cuma <strong>Rp29.000</strong> — hemat 61%!</span>
+    <a href="#promo">Klaim sekarang →</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <!-- Logo 04: slide stack + bolt -->
+      <a href="#" class="nav-logo">
+        <svg class="logo-mark-svg" width="36" height="36" viewBox="0 0 56 56" aria-hidden="true">
+          <!-- back card (butter) -->
+          <rect x="6" y="14" width="32" height="22" rx="5" fill="#FFC759"/>
+          <!-- mid card (ink) -->
+          <rect x="14" y="10" width="32" height="22" rx="5" fill="#1A1A1A"/>
+          <!-- front card (primary) -->
+          <rect x="10" y="20" width="36" height="26" rx="5" fill="#FF5A1F"/>
+          <!-- bolt on front card -->
+          <path d="M30 24 L20 36 H26 L24 44 L34 32 H28 L30 24 Z" fill="#fff"/>
+        </svg>
+        <div class="nav-wordmark">Slide<em>Kilat</em></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#cara-kerja">Cara Kerja</a></li>
+        <li><a href="#contoh">Contoh</a></li>
+        <li><a href="#harga">Harga</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20SlideKilat!%20Saya%20mau%20buat%20presentasi%20nih%20%F0%9F%9A%80"
+         class="btn btn-wa nav-cta-d" target="_blank" rel="noopener" style="flex-shrink:0;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.524 5.847L0 24l6.351-1.494A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.788 9.788 0 01-4.988-1.364l-.358-.213-3.71.872.938-3.617-.233-.372A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+        </svg>
+        Chat Sekarang
+      </a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mob">
+    <a href="#cara-kerja" onclick="toggleMenu()">Cara Kerja</a>
+    <a href="#contoh" onclick="toggleMenu()">Contoh Hasil</a>
+    <a href="#harga" onclick="toggleMenu()">Harga</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="https://wa.me/628XXXXXXXXXX" class="btn btn-wa"
+       style="text-align:center;display:block;margin-top:4px;" target="_blank" rel="noopener">
+      Chat di WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge anim">
+          <span class="live-dot"></span>
+          Tersedia 24 jam &nbsp;·&nbsp; 7 hari seminggu
+        </div>
+        <h1 class="hero-title anim d1">
+          Kirim dokumen.<br>
+          Terima presentasi.<br>
+          <span class="hl">5 menit.</span>
+        </h1>
+        <p class="hero-sub anim d2">
+          Slide profesional langsung dikirim ke WhatsApp kamu — tanpa ribet, tanpa drama, tengah malam pun siap.
+        </p>
+        <div class="hero-btns anim d3">
+          <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20SlideKilat!%20Saya%20mau%20buat%20presentasi%20nih%20%F0%9F%9A%80"
+             class="btn btn-wa" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.524 5.847L0 24l6.351-1.494A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.788 9.788 0 01-4.988-1.364l-.358-.213-3.71.872.938-3.617-.233-.372A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+            </svg>
+            Coba Sekarang — Gratis Konsultasi
+          </a>
+          <a href="#contoh" class="btn btn-ghost">Lihat Contoh</a>
+        </div>
+        <div class="hero-stats anim d4">
+          <div>
+            <div class="hstat-num">500+</div>
+            <div class="hstat-label">Presentasi dibuat</div>
+          </div>
+          <div class="hstat-div"></div>
+          <div>
+            <div class="hstat-num">⚡ 5 mnt</div>
+            <div class="hstat-label">Rata-rata delivery</div>
+          </div>
+          <div class="hstat-div"></div>
+          <div>
+            <div class="hstat-num">24/7</div>
+            <div class="hstat-label">Tersedia kapan saja</div>
+          </div>
+          <div class="hstat-div"></div>
+          <div>
+            <div class="hstat-num">4.9 ★</div>
+            <div class="hstat-label">Rating pelanggan</div>
+          </div>
+        </div>
+      </div>
+      <!-- Animated badge -->
+      <div class="five-badge anim d3">
+        <span class="five-num">5</span>
+        <span class="five-label">MENIT ⚡</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="mitem">⚡ Siap dalam 5 menit <span class="mdot"></span></span>
+    <span class="mitem">Kirim via WhatsApp <span class="mdot"></span></span>
+    <span class="mitem">Tersedia 24 jam <span class="mdot"></span></span>
+    <span class="mitem">Slide profesional <span class="mdot"></span></span>
+    <span class="mitem">Tanpa ribet <span class="mdot"></span></span>
+    <span class="mitem">Format PPT &amp; PDF <span class="mdot"></span></span>
+    <span class="mitem">Revisi included <span class="mdot"></span></span>
+    <span class="mitem">7 hari seminggu <span class="mdot"></span></span>
+    <span class="mitem">⚡ Siap dalam 5 menit <span class="mdot"></span></span>
+    <span class="mitem">Kirim via WhatsApp <span class="mdot"></span></span>
+    <span class="mitem">Tersedia 24 jam <span class="mdot"></span></span>
+    <span class="mitem">Slide profesional <span class="mdot"></span></span>
+    <span class="mitem">Tanpa ribet <span class="mdot"></span></span>
+    <span class="mitem">Format PPT &amp; PDF <span class="mdot"></span></span>
+    <span class="mitem">Revisi included <span class="mdot"></span></span>
+    <span class="mitem">7 hari seminggu <span class="mdot"></span></span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-bg section" id="cara-kerja">
+  <div class="container text-center">
+    <div class="tag"><span class="tag-dot"></span>Cara Kerja</div>
+    <h2 class="section-title">Semudah chat sama teman</h2>
+    <p class="section-sub">Tiga langkah, dan presentasi impresif kamu sudah siap — langsung di WhatsApp.</p>
+    <div class="steps">
+      <div class="step s1">
+        <div class="step-n">1</div>
+        <span class="step-icon">📄</span>
+        <div class="step-title">Kirim dokumenmu</div>
+        <p class="step-desc">Kirim file Word, PDF, atau ketik poin-poin langsung di WhatsApp. Bisa juga paste dari Google Docs.</p>
+      </div>
+      <div class="step s2">
+        <div class="step-n">2</div>
+        <span class="step-icon">🎯</span>
+        <div class="step-title">Pilih paket &amp; bayar</div>
+        <p class="step-desc">Pilih jumlah slide yang kamu butuhkan dan konfirmasi pembayaran. Prosesnya cepat, langsung di chat.</p>
+      </div>
+      <div class="step s3">
+        <div class="step-n">3</div>
+        <span class="step-icon">🚀</span>
+        <div class="step-title">Terima dalam 5 menit</div>
+        <p class="step-desc">Slide profesional siap dan langsung dikirim ke WhatsApp kamu. Format PPT dan PDF sekaligus!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="port-bg section" id="contoh">
+  <div class="container text-center">
+    <div class="tag"><span class="tag-dot"></span>Contoh Hasil</div>
+    <h2 class="section-title">Kira-kira begini hasilnya</h2>
+    <p class="section-sub">Ratusan presentasi sudah kami kirimkan. Dari pitch deck sampai laporan — semuanya dalam 5 menit.</p>
+    <div class="port-grid">
+      <!-- Pitch Deck -->
+      <div class="port-item">
+        <div class="smock" style="background:#1A1A1A;">
+          <div class="smock-head"><div class="sbar" style="background:#FF5A1F;"></div><div class="sbar2" style="background:#FF5A1F;"></div></div>
+          <div class="smock-body">
+            <div class="sline" style="background:#fff;width:88%;"></div>
+            <div class="sline" style="background:#fff;width:72%;"></div>
+            <div class="scols"><div class="sbox" style="background:#FF5A1F;opacity:.8;"></div><div class="sbox" style="background:#FFC759;opacity:.8;"></div></div>
+          </div>
+        </div>
+        <div class="port-label"><div class="port-name">Pitch Deck Startup</div><div class="port-time">12 slide · Terkirim 4 menit 32 detik</div></div>
+      </div>
+      <!-- Company Profile -->
+      <div class="port-item">
+        <div class="smock" style="background:#FFF4E6;">
+          <div class="smock-head"><div class="sbar" style="background:#1A1A1A;"></div><div class="sbar2" style="background:#1A1A1A;"></div></div>
+          <div class="smock-body">
+            <div class="sline" style="background:#1A1A1A;width:80%;"></div>
+            <div class="sline" style="background:#1A1A1A;width:62%;"></div>
+            <div class="scols"><div class="sbox" style="background:#FF5A1F;opacity:.6;"></div><div class="sbox" style="background:#1A1A1A;opacity:.18;"></div></div>
+          </div>
+        </div>
+        <div class="port-label"><div class="port-name">Company Profile</div><div class="port-time">18 slide · Terkirim 4 menit 58 detik</div></div>
+      </div>
+      <!-- Akademik -->
+      <div class="port-item">
+        <div class="smock" style="background:#FAF7F1;">
+          <div class="smock-head"><div class="sbar" style="background:#FFC759;"></div><div class="sbar2" style="background:#FFC759;"></div></div>
+          <div class="smock-body">
+            <div class="sline" style="background:#1A1A1A;width:84%;"></div>
+            <div class="sline" style="background:#1A1A1A;width:68%;"></div>
+            <div class="scols"><div class="sbox" style="background:#FFC759;opacity:.6;"></div><div class="sbox" style="background:#0E8A52;opacity:.5;"></div></div>
+          </div>
+        </div>
+        <div class="port-label"><div class="port-name">Presentasi Akademik</div><div class="port-time">10 slide · Terkirim 3 menit 47 detik</div></div>
+      </div>
+      <!-- Marketing -->
+      <div class="port-item">
+        <div class="smock" style="background:#FFF0E8;">
+          <div class="smock-head"><div class="sbar" style="background:#FF5A1F;"></div><div class="sbar2" style="background:#FF5A1F;"></div></div>
+          <div class="smock-body">
+            <div class="sline" style="background:#1A1A1A;width:86%;"></div>
+            <div class="sline" style="background:#1A1A1A;width:60%;"></div>
+            <div class="scols"><div class="sbox" style="background:#FF5A1F;opacity:.5;"></div><div class="sbox" style="background:#FFC759;opacity:.5;"></div></div>
+          </div>
+        </div>
+        <div class="port-label"><div class="port-name">Proposal Marketing</div><div class="port-time">20 slide · Terkirim 4 menit 21 detik</div></div>
+      </div>
+      <!-- Laporan -->
+      <div class="port-item">
+        <div class="smock" style="background:#F0FAF5;">
+          <div class="smock-head"><div class="sbar" style="background:#0E8A52;"></div><div class="sbar2" style="background:#0E8A52;"></div></div>
+          <div class="smock-body">
+            <div class="sline" style="background:#1A1A1A;width:82%;"></div>
+            <div class="sline" style="background:#1A1A1A;width:66%;"></div>
+            <div class="scols"><div class="sbox" style="background:#0E8A52;opacity:.5;"></div><div class="sbox" style="background:#1A1A1A;opacity:.12;"></div></div>
+          </div>
+        </div>
+        <div class="port-label"><div class="port-name">Laporan Bisnis</div><div class="port-time">15 slide · Terkirim 4 menit 09 detik</div></div>
+      </div>
+      <!-- Training -->
+      <div class="port-item">
+        <div class="smock" style="background:#1A1A1A;">
+          <div class="smock-head"><div class="sbar" style="background:#FFC759;"></div><div class="sbar2" style="background:#FFC759;"></div></div>
+          <div class="smock-body">
+            <div class="sline" style="background:#fff;width:78%;"></div>
+            <div class="sline" style="background:#fff;width:54%;"></div>
+            <div class="scols"><div class="sbox" style="background:#FFC759;opacity:.6;"></div><div class="sbox" style="background:#FF5A1F;opacity:.6;"></div></div>
+          </div>
+        </div>
+        <div class="port-label"><div class="port-name">Training Material</div><div class="port-time">25 slide · Terkirim 4 menit 55 detik</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="promo-section" id="promo">
+  <div class="container">
+    <div class="promo-inner">
+      <div>
+        <div class="promo-badge">🔥 Promo Peluncuran — Terbatas!</div>
+        <h2 class="promo-title">
+          Coba pertama kali?<br>
+          Bayar cuma <strong style="background:rgba(26,26,26,0.85);padding:0 10px;border-radius:10px;display:inline-block;">Rp29.000.</strong>
+        </h2>
+        <p class="promo-sub">
+          Kami tahu Rp75.000 terasa berat kalau belum pernah coba. Jadi untuk order pertamamu, cukup bayar Rp29.000 — dan buktikan sendiri seberapa kilat kami bekerja.
+        </p>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <a href="https://wa.me/628XXXXXXXXXX?text=Halo!%20Saya%20mau%20klaim%20promo%20Rp29.000%20untuk%20order%20pertama%20%F0%9F%94%A5"
+             class="btn btn-ink" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.524 5.847L0 24l6.351-1.494A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.788 9.788 0 01-4.988-1.364l-.358-.213-3.71.872.938-3.617-.233-.372A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+            </svg>
+            Klaim Promo Sekarang
+          </a>
+          <div class="badge-24h"><div class="badge-24h-dot"></div>Tersedia 24 jam</div>
+        </div>
+        <p class="promo-conds">* Berlaku untuk order pertama. Maksimal 8 slide. Tidak perlu kode promo — cukup sebut "order pertama" di WhatsApp.</p>
+      </div>
+      <div class="promo-price-box">
+        <div class="promo-was">Rp75.000</div>
+        <div class="promo-label-top">Harga Promo</div>
+        <div class="promo-amount">Rp29k</div>
+        <div class="promo-period">order pertama</div>
+        <div class="promo-save-pill">Hemat 61%</div>
+        <ul class="promo-feats">
+          <li>Hingga 8 slide</li>
+          <li>Format PPT + PDF</li>
+          <li>Delivered 5 menit</li>
+          <li>1x revisi gratis</li>
+        </ul>
+        <a href="https://wa.me/628XXXXXXXXXX?text=Halo!%20Saya%20mau%20klaim%20promo%20Rp29.000"
+           class="btn btn-wa" style="width:100%;justify-content:center;" target="_blank" rel="noopener">
+          Klaim di WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-bg section" id="harga">
+  <div class="container text-center">
+    <div class="tag"><span class="tag-dot"></span>Harga</div>
+    <h2 class="section-title">Harga jelas, tanpa kejutan</h2>
+    <p class="section-sub">Bayar per order, terima langsung. Tidak ada biaya langganan, tidak ada biaya tersembunyi.</p>
+    <div class="price-grid">
+      <!-- Instan -->
+      <div class="pcard">
+        <div class="p-plan">Paket</div>
+        <div class="p-name">Instan</div>
+        <div class="p-desc">Cocok untuk dokumen pendek &amp; presentasi cepat</div>
+        <div class="p-price-block">
+          <div class="p-amount">Rp75.000</div>
+          <div class="p-unit">per order</div>
+        </div>
+        <ul class="p-features">
+          <li><span class="fcheck">✓</span>Dokumen hingga ~500 kata</li>
+          <li><span class="fcheck">✓</span>Hingga 10 slide</li>
+          <li><span class="fcheck">✓</span>Format PPT + PDF</li>
+          <li><span class="fcheck">✓</span>Delivered dalam 5 menit</li>
+          <li><span class="fcheck">✓</span>1x revisi via WhatsApp</li>
+        </ul>
+        <a href="https://wa.me/628XXXXXXXXXX?text=Halo!%20Saya%20mau%20pesan%20Paket%20Instan"
+           class="btn btn-outline" target="_blank" rel="noopener">Pesan Paket Instan</a>
+      </div>
+      <!-- Profesional (featured) -->
+      <div class="pcard hot">
+        <div class="hot-badge">★ Paling Diminati</div>
+        <div class="p-plan">Paket</div>
+        <div class="p-name">Profesional</div>
+        <div class="p-desc">Untuk presentasi bisnis dan kampus yang berkesan</div>
+        <div class="p-price-block">
+          <div class="p-amount">Rp185.000</div>
+          <div class="p-unit">per order</div>
+        </div>
+        <ul class="p-features">
+          <li><span class="fcheck">✓</span>Dokumen hingga ~2.000 kata</li>
+          <li><span class="fcheck">✓</span>Hingga 20 slide</li>
+          <li><span class="fcheck">✓</span>Format PPT + PDF</li>
+          <li><span class="fcheck">✓</span>Delivered dalam 5 menit</li>
+          <li><span class="fcheck">✓</span>2x revisi via WhatsApp</li>
+          <li><span class="fcheck">✓</span>Desain lebih detail &amp; kaya</li>
+        </ul>
+        <a href="https://wa.me/628XXXXXXXXXX?text=Halo!%20Saya%20mau%20pesan%20Paket%20Profesional"
+           class="btn btn-butter" target="_blank" rel="noopener">Pesan Paket Profesional</a>
+      </div>
+      <!-- Lengkap -->
+      <div class="pcard">
+        <div class="p-plan">Paket</div>
+        <div class="p-name">Lengkap</div>
+        <div class="p-desc">Untuk dokumen panjang, laporan, atau deck komprehensif</div>
+        <div class="p-price-block">
+          <div class="p-amount">Rp375.000</div>
+          <div class="p-unit">per order</div>
+        </div>
+        <ul class="p-features">
+          <li><span class="fcheck">✓</span>Dokumen hingga ~5.000 kata</li>
+          <li><span class="fcheck">✓</span>Hingga 30 slide</li>
+          <li><span class="fcheck">✓</span>Format PPT + PDF</li>
+          <li><span class="fcheck">✓</span>Delivered dalam 5 menit</li>
+          <li><span class="fcheck">✓</span>Revisi unlimited</li>
+          <li><span class="fcheck">✓</span>Custom brand color &amp; font</li>
+        </ul>
+        <a href="https://wa.me/628XXXXXXXXXX?text=Halo!%20Saya%20mau%20pesan%20Paket%20Lengkap"
+           class="btn btn-outline" target="_blank" rel="noopener">Pesan Paket Lengkap</a>
+      </div>
+    </div>
+
+    <!-- Add-on -->
+    <div class="addon">
+      <div>
+        <div class="addon-tag">✦ Add-on Tersedia</div>
+        <div class="addon-name">+ Video Presentasi</div>
+        <div class="addon-desc">Video narasi profesional dari slide kamu. Format MP4, delivered 2–3 jam.</div>
+      </div>
+      <div class="addon-price">+Rp250.000 <span>/ order</span></div>
+      <a href="https://wa.me/628XXXXXXXXXX?text=Halo!%20Saya%20tertarik%20add-on%20video%20presentasi"
+         class="btn btn-primary" target="_blank" rel="noopener" style="flex-shrink:0;">Tanya Dulu</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimoni" style="background:var(--paper);">
+  <div class="container text-center">
+    <div class="tag"><span class="tag-dot"></span>Testimoni</div>
+    <h2 class="section-title">Kata mereka yang sudah coba</h2>
+    <p class="section-sub">Lebih dari 500 orang sudah pakai SlideKilat. Ini cerita mereka.</p>
+    <div class="tgrid">
+      <div class="tcard">
+        <div class="tstars">★★★★★</div>
+        <span class="tquote">"</span>
+        <p class="ttext">Nggak nyangka bisa secepat ini. Saya kirim draft jam 10 malam, 5 menit kemudian slidenya sudah di WhatsApp. Presentasi besok paginya jadi jauh lebih percaya diri!</p>
+        <div class="tfooter">
+          <div class="tavatar" style="background:#FFF4E6;color:#C05A00;">RK</div>
+          <div><div class="tname">Rina Kusuma</div><div class="trole">Freelance Designer, Jakarta</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tstars">★★★★★</div>
+        <span class="tquote">"</span>
+        <p class="ttext">Kami pakai SlideKilat buat pitch ke investor. Hasilnya clean, profesional, dan selesai sebelum meeting mulai. Tim kami sekarang langganan setiap bulan.</p>
+        <div class="tfooter">
+          <div class="tavatar" style="background:#F0FAF5;color:#0E8A52;">BS</div>
+          <div><div class="tname">Budi Santoso</div><div class="trole">CEO, PT Maju Bersama</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tstars">★★★★★</div>
+        <span class="tquote">"</span>
+        <p class="ttext">Sebagai mahasiswi yang sering kejar deadline, SlideKilat beneran penyelamat. Tinggal kirim catatan kuliah, langsung jadi slide presentasi yang rapi. Recommended banget!</p>
+        <div class="tfooter">
+          <div class="tavatar" style="background:#EEF3FF;color:#3A5EDB;">DR</div>
+          <div><div class="tname">Dewi Rahayu</div><div class="trole">Mahasiswi, Universitas Brawijaya</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-bg section" id="tentang">
+  <div class="container">
+    <div class="about-inner">
+      <div>
+        <div class="about-tag">Tentang SlideKilat</div>
+        <h2 class="about-title">
+          Lahir dari frustrasi yang sama:<br>
+          <span class="hl">buat slide itu lama.</span>
+        </h2>
+        <p class="about-p">Kita semua pernah merasakannya — begadang merapikan slide sampai subuh, padahal isinya sudah jelas di kepala. Atau panik karena presentasi besok sementara file belum kesentuh.</p>
+        <p class="about-p">SlideKilat hadir dengan satu misi: <strong style="color:var(--primary);">buat presentasi profesional bukan lagi soal waktu.</strong> Kirim dokumenmu jam berapa pun — tengah malam, subuh, atau jelang deadline — dan dalam 5 menit slide impresif sudah di tanganmu.</p>
+        <p class="about-p">Tidak perlu aplikasi baru. Tidak perlu belajar software desain. Cukup WhatsApp yang sudah ada di HP kamu.</p>
+      </div>
+      <div class="astat-grid">
+        <div class="astat acc"><div class="astat-num">5</div><div class="astat-label">Menit rata-rata delivery</div></div>
+        <div class="astat"><div class="astat-num">24/7</div><div class="astat-label">Tersedia kapan saja</div></div>
+        <div class="astat"><div class="astat-num">500+</div><div class="astat-label">Presentasi dibuat</div></div>
+        <div class="astat"><div class="astat-num">4.9★</div><div class="astat-label">Rating kepuasan</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-bg section" id="faq">
+  <div class="container text-center">
+    <div class="tag"><span class="tag-dot"></span>FAQ</div>
+    <h2 class="section-title">Pertanyaan yang sering ditanyakan</h2>
+    <p class="section-sub">Masih ada yang mengganjal? Jawaban ada di sini — atau langsung tanya di WhatsApp.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Apakah benar tersedia 24 jam?<span class="faq-icon">+</span></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Ya! SlideKilat beroperasi 24 jam sehari, 7 hari seminggu — termasuk hari libur nasional. Mau kirim jam 2 pagi sebelum presentasi subuh? Tidak masalah. Sistem kami tidak tidur, dan pesananmu diproses otomatis kapan pun kamu mengirimnya.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Benarkah selesai dalam 5 menit?<span class="faq-icon">+</span></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Ya, serius! Rata-rata pengerjaan kami adalah 3–5 menit dari saat dokumen diterima. Untuk dokumen yang lebih panjang (di atas 3.000 kata), bisa membutuhkan hingga 10 menit — tapi tetap jauh lebih cepat dari cara konvensional.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Format dokumen apa yang bisa dikirim?<span class="faq-icon">+</span></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Kami menerima hampir semua format: Word (.docx), PDF, file teks (.txt), Google Docs (share link), atau kamu bisa langsung ketik atau paste poin-poin di chat WhatsApp. Fleksibel sesuai yang paling mudah buat kamu.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Apakah saya bisa minta revisi?<span class="faq-icon">+</span></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Tentu! Setiap paket sudah termasuk jumlah revisi yang berbeda-beda. Paket Instan: 1x revisi, Paket Profesional: 2x revisi, Paket Lengkap: revisi unlimited. Cukup kasih feedback via WhatsApp dan kami kerjakan.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Apakah data dan dokumen saya aman?<span class="faq-icon">+</span></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Keamanan dokumen kamu adalah prioritas kami. Semua file yang masuk hanya digunakan untuk keperluan pembuatan presentasi dan tidak dibagikan ke pihak manapun. File dihapus dari sistem kami setelah 7 hari pengiriman.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Bagaimana cara pembayarannya?<span class="faq-icon">+</span></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Kami menerima transfer bank (BCA, Mandiri, BNI, BRI), GoPay, OVO, DANA, dan QRIS. Pembayaran dilakukan setelah kamu memilih paket dan sebelum pengerjaan dimulai. Konfirmasi otomatis via WhatsApp.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Apakah tersedia paket untuk bisnis atau tim?<span class="faq-icon">+</span></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Ada! Kami punya paket langganan khusus untuk bisnis dan tim yang butuh slide secara rutin — lebih hemat dan lebih prioritas. Chat kami di WhatsApp dan kami akan kirimkan penawaran yang sesuai kebutuhan tim kamu.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-sec">
+  <div class="cta-dots"></div>
+  <div class="container">
+    <h2 class="cta-title">Presentasimu sudah menunggu. ⚡</h2>
+    <p class="cta-sub">Tersedia 24 jam, 7 hari seminggu. Kirim dokumenmu sekarang dan terima slide profesional dalam 5 menit.</p>
+    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20SlideKilat!%20Saya%20mau%20buat%20presentasi%20nih%20%F0%9F%9A%80"
+       class="btn btn-ink" style="font-size:17px;padding:16px 36px;" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.524 5.847L0 24l6.351-1.494A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.788 9.788 0 01-4.988-1.364l-.358-.213-3.71.872.938-3.617-.233-.372A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+      </svg>
+      Chat di WhatsApp Sekarang
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="nav-logo">
+          <svg width="30" height="30" viewBox="0 0 56 56" aria-hidden="true">
+            <rect x="6" y="14" width="32" height="22" rx="5" fill="#FFC759" opacity=".7"/>
+            <rect x="14" y="10" width="32" height="22" rx="5" fill="#FFF4E6" opacity=".5"/>
+            <rect x="10" y="20" width="36" height="26" rx="5" fill="#FF5A1F"/>
+            <path d="M30 24 L20 36 H26 L24 44 L34 32 H28 L30 24 Z" fill="#fff"/>
+          </svg>
+          <div class="nav-wordmark" style="color:var(--cream);">Slide<em>Kilat</em></div>
+        </a>
+        <p class="foot-brand-p">Presentasi profesional siap dalam 5 menit, tersedia 24 jam sehari 7 hari seminggu. Langsung di WhatsApp kamu.</p>
+      </div>
+      <div>
+        <div class="foot-col-title">Layanan</div>
+        <ul class="foot-links">
+          <li><a href="#cara-kerja">Cara Kerja</a></li>
+          <li><a href="#contoh">Contoh Hasil</a></li>
+          <li><a href="#harga">Harga</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-title">Hubungi Kami</div>
+        <ul class="foot-links">
+          <li><a href="https://wa.me/628XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://instagram.com/slidekilat" target="_blank" rel="noopener">Instagram @slidekilat</a></li>
+          <li><a href="mailto:halo@slidekilat.com">halo@slidekilat.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2025 <span>SlideKilat</span>. Hak cipta dilindungi.</div>
+      <div>Dibuat dengan ❤️ untuk Indonesia</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const m = document.getElementById('mob');
+  m.style.display = m.style.display === 'block' ? 'none' : 'block';
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const ans  = item.querySelector('.faq-ans');
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-ans').style.maxHeight = '0';
+  });
+  if (!open) {
+    item.classList.add('open');
+    ans.style.maxHeight = ans.scrollHeight + 'px';
+  }
+}
+
+// Scroll-triggered fade-up
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.step,.port-item,.pcard,.tcard,.faq-item,.astat').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = `opacity .42s ease ${(i % 4) * 0.07}s, transform .42s ease ${(i % 4) * 0.07}s`;
+  obs.observe(el);
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
