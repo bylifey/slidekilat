@@ -753,18 +753,19 @@ footer { background: var(--ink); color: rgba(255,244,230,0.5); padding: 52px 0 3
       </a>
 
       <ul class="nav-links">
-        <li><a href="#cara-kerja">Cara Kerja</a></li>
-        <li><a href="#contoh">Contoh</a></li>
-        <li><a href="#harga">Harga</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#cara-kerja" data-i18n="nav.how">Cara Kerja</a></li>
+        <li><a href="#contoh" data-i18n="nav.examples">Contoh</a></li>
+        <li><a href="#harga" data-i18n="nav.pricing">Harga</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
       </ul>
-         <a href="https://wa.me/6285121820236?text=Halo%20SlideKilat!%20Saya%20mau%20buat%20presentasi%20nih%20%F0%9F%9A%80"
+      <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language" aria-pressed="false">EN</button>
+      <a href="https://wa.me/6285121820236?text=Halo%20SlideKilat!%20Saya%20mau%20buat%20presentasi%20nih%20%F0%9F%9A%80"
          class="btn btn-wa nav-cta-d" target="_blank" rel="noopener" style="flex-shrink:0;">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
           <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.524 5.847L0 24l6.351-1.494A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.788 9.788 0 01-4.988-1.364l-.358-.213-3.71.872.938-3.617-.233-.372A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
         </svg>
-        Chat Sekarang
+        <span data-i18n="nav.cta">Chat Sekarang</span>
       </a>
       <button class="hamburger" onclick="toggleMenu()" aria-label="Buka menu">
         <span></span><span></span><span></span>
@@ -772,13 +773,14 @@ footer { background: var(--ink); color: rgba(255,244,230,0.5); padding: 52px 0 3
     </div>
   </div>
   <div class="mobile-menu" id="mob">
-    <a href="#cara-kerja" onclick="toggleMenu()">Cara Kerja</a>
-    <a href="#contoh" onclick="toggleMenu()">Contoh Hasil</a>
-    <a href="#harga" onclick="toggleMenu()">Harga</a>
-    <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="#cara-kerja" onclick="toggleMenu()" data-i18n="nav.how">Cara Kerja</a>
+    <a href="#contoh" onclick="toggleMenu()" data-i18n="nav.examples">Contoh Hasil</a>
+    <a href="#harga" onclick="toggleMenu()" data-i18n="nav.pricing">Harga</a>
+    <a href="#faq" onclick="toggleMenu()" data-i18n="nav.faq">FAQ</a>
+    <button id="langToggleMobile" class="lang-toggle lang-toggle-mobile" type="button" aria-label="Switch language">EN</button>
     <a href="https://wa.me/6285121820236" class="btn btn-wa"
        style="text-align:center;display:block;margin-top:4px;" target="_blank" rel="noopener">
-      Chat di WhatsApp
+      <span data-i18n="nav.ctaMobile">Chat di WhatsApp</span>
     </a>
   </div>
 </nav>
@@ -791,18 +793,13 @@ footer { background: var(--ink); color: rgba(255,244,230,0.5); padding: 52px 0 3
   <div class="container">
     <div class="hero-inner">
       <div>
-        <div class="hero-badge anim">
-          <span class="live-dot"></span>
-          Siap dalam 30 menit &nbsp;·&nbsp; Garansi uang kembali
-        </div>
+        <div class="hero-badge anim" data-i18n="hero.badge">Siap dalam 30 menit &nbsp;·&nbsp; Garansi uang kembali</div>
         <h1 class="hero-title anim d1">
-          Kirim dokumen.<br>
-          Terima presentasi.<br>
-          <span class="hl">30 menit.</span>
+          <span data-i18n="hero.line1">Kirim dokumen.</span><br>
+          <span data-i18n="hero.line2">Terima presentasi.</span><br>
+          <span class="hl" data-i18n="hero.line3">30 menit.</span>
         </h1>
-        <p class="hero-sub anim d2">
-          Slide profesional langsung dikirim ke WhatsApp kamu — tanpa ribet, tanpa drama, tengah malam pun siap.
-        </p>
+        <p class="hero-sub anim d2" data-i18n="hero.sub">Slide profesional langsung dikirim ke WhatsApp kamu — tanpa ribet, tanpa drama, tengah malam pun siap.</p>
         <div class="hero-btns anim d3">
            <a href="https://wa.me/6285121820236?text=Halo%20SlideKilat!%20Saya%20mau%20buat%20presentasi%20nih%20%F0%9F%9A%80"
              class="btn btn-wa" target="_blank" rel="noopener">
@@ -810,24 +807,24 @@ footer { background: var(--ink); color: rgba(255,244,230,0.5); padding: 52px 0 3
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
               <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.524 5.847L0 24l6.351-1.494A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.788 9.788 0 01-4.988-1.364l-.358-.213-3.71.872.938-3.617-.233-.372A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
             </svg>
-            Coba Sekarang — Gratis Konsultasi
+            <span data-i18n="hero.ctaPrimary">Coba Sekarang — Gratis Konsultasi</span>
           </a>
-          <a href="#contoh" class="btn btn-ghost">Lihat Contoh</a>
+          <a href="#contoh" class="btn btn-ghost" data-i18n="hero.ctaSecondary">Lihat Contoh</a>
         </div>
         <div class="hero-stats anim d4">
           <div>
             <div class="hstat-num">500+</div>
-            <div class="hstat-label">Presentasi dibuat</div>
+            <div class="hstat-label" data-i18n="hero.stat1">Presentasi dibuat</div>
           </div>
           <div class="hstat-div"></div>
           <div>
             <div class="hstat-num">⚡ 30 mnt</div>
-            <div class="hstat-label">Rata-rata delivery</div>
+            <div class="hstat-label" data-i18n="hero.stat2">Rata-rata delivery</div>
           </div>
           
           <div>
             <div class="hstat-num">4.9 ★</div>
-            <div class="hstat-label">Rating pelanggan</div>
+            <div class="hstat-label" data-i18n="hero.stat3">Rating pelanggan</div>
           </div>
         </div>
       </div>
@@ -925,12 +922,8 @@ footer { background: var(--ink); color: rgba(255,244,230,0.5); padding: 52px 0 3
       <!-- Akademik -->
       <div class="port-item">
         <div class="smock" style="background:#FAF7F1;">
-          <div class="smock-head"><div class="sbar" style="background:#FFC759;"></div><div class="sbar2" style="background:#FFC759;"></div></div>
-          <div class="smock-body">
-            <div class="sline" style="background:#1A1A1A;width:84%;"></div>
-            <div class="sline" style="background:#1A1A1A;width:68%;"></div>
-            <div class="scols"><div class="sbox" style="background:#FFC759;opacity:.6;"></div><div class="sbox" style="background:#0E8A52;opacity:.5;"></div></div>
-            <div class="pdf-preview" data-pdf="Academic_Analisis_Titik_dan_Jalur_Evakuasi.pdf" data-pages="12" style="margin-top:8px;position:relative;width:100%;height:110px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-card);">
+          <div class="smock-body" style="padding:0;min-height:auto;">
+            <div class="pdf-preview" data-pdf="Academic_Analisis_Titik_dan_Jalur_Evakuasi.pdf" data-pages="12" style="position:relative;width:100%;height:140px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-card);">
               <iframe src="Academic_Analisis_Titik_dan_Jalur_Evakuasi.pdf#page=1" style="width:100%;height:100%;border:0;background:#fff;" aria-label="Preview PDF"></iframe>
               <div class="pdf-thumb" aria-hidden="true" style="display:none;position:absolute;inset:0;background:#f6f6f6;align-items:center;justify-content:center;padding:0;">
                 <div style="width:100%;height:100%;background:linear-gradient(135deg,rgba(255,255,255,0.98),rgba(240,240,240,0.98));display:flex;align-items:center;justify-content:center;">
@@ -1036,9 +1029,9 @@ footer { background: var(--ink); color: rgba(255,244,230,0.5); padding: 52px 0 3
 <!-- PRICING -->
 <section class="pricing-bg section" id="harga">
   <div class="container text-center">
-    <div class="tag"><span class="tag-dot"></span>Harga</div>
-    <h2 class="section-title">Harga jelas, tanpa kejutan</h2>
-    <p class="section-sub">Bayar per order, terima langsung. Tidak ada biaya langganan, tidak ada biaya tersembunyi.</p>
+    <div class="tag"><span class="tag-dot"></span><span data-i18n="pricing.tag">Harga</span></div>
+    <h2 class="section-title" data-i18n="pricing.title">Harga jelas, tanpa kejutan</h2>
+    <p class="section-sub" data-i18n="pricing.subtitle">Bayar per order, terima langsung. Tidak ada biaya langganan, tidak ada biaya tersembunyi.</p>
     <div class="price-grid">
       <!-- Reguler -->
       <div class="pcard">
@@ -1262,6 +1255,88 @@ footer { background: var(--ink); color: rgba(255,244,230,0.5); padding: 52px 0 3
 </footer>
 
 <script>
+const translations = {
+  id: {
+    'nav.how': 'Cara Kerja',
+    'nav.examples': 'Contoh',
+    'nav.pricing': 'Harga',
+    'nav.faq': 'FAQ',
+    'nav.cta': 'Chat Sekarang',
+    'nav.ctaMobile': 'Chat di WhatsApp',
+    'hero.badge': 'Siap dalam 30 menit · Garansi uang kembali',
+    'hero.line1': 'Kirim dokumen.',
+    'hero.line2': 'Terima presentasi.',
+    'hero.line3': '30 menit.',
+    'hero.sub': 'Slide profesional langsung dikirim ke WhatsApp kamu — tanpa ribet, tanpa drama, tengah malam pun siap.',
+    'hero.ctaPrimary': 'Coba Sekarang — Gratis Konsultasi',
+    'hero.ctaSecondary': 'Lihat Contoh',
+    'hero.stat1': 'Presentasi dibuat',
+    'hero.stat2': 'Rata-rata delivery',
+    'hero.stat3': 'Rating pelanggan',
+    'pricing.tag': 'Harga',
+    'pricing.title': 'Harga jelas, tanpa kejutan',
+    'pricing.subtitle': 'Bayar per order, terima langsung. Tidak ada biaya langganan, tidak ada biaya tersembunyi.'
+  },
+  en: {
+    'nav.how': 'How It Works',
+    'nav.examples': 'Examples',
+    'nav.pricing': 'Pricing',
+    'nav.faq': 'FAQ',
+    'nav.cta': 'Start Chat',
+    'nav.ctaMobile': 'Chat on WhatsApp',
+    'hero.badge': 'Ready in 30 minutes · Money-back guarantee',
+    'hero.line1': 'Send your document.',
+    'hero.line2': 'Receive a presentation.',
+    'hero.line3': '30 minutes.',
+    'hero.sub': 'Professional slides are sent directly to your WhatsApp — simple, fast, and ready even late at night.',
+    'hero.ctaPrimary': 'Try It Now — Free Consultation',
+    'hero.ctaSecondary': 'See Examples',
+    'hero.stat1': 'Presentations created',
+    'hero.stat2': 'Average delivery',
+    'hero.stat3': 'Customer rating',
+    'pricing.tag': 'Pricing',
+    'pricing.title': 'Clear pricing, no surprises',
+    'pricing.subtitle': 'Pay per order and get results immediately. No subscription fees, no hidden charges.'
+  }
+};
+
+function applyLanguage(lang) {
+  const current = translations[lang] ? lang : 'id';
+  const map = translations[current];
+  document.documentElement.lang = current;
+  document.documentElement.setAttribute('data-lang', current);
+  document.title = current === 'en'
+    ? 'SlideKilat — Professional Presentations in 30 Minutes ⚡'
+    : 'SlideKilat — Presentasi Profesional dalam 30 Menit ⚡';
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.setAttribute('content', current === 'en'
+      ? 'SlideKilat — Professional presentations ready in 30 minutes. Money-back guarantee. Send your document via WhatsApp and receive polished slides in chat.'
+      : 'SlideKilat — Presentasi profesional siap dalam 30 menit. Jika tidak siap dalam 30 menit, garansi uang kembali. Kirim dokumen lewat WhatsApp, terima slide keren langsung di chat kamu.');
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const text = map[el.getAttribute('data-i18n')];
+    if (text) el.textContent = text;
+  });
+  const toggle = document.getElementById('langToggle');
+  const toggleMobile = document.getElementById('langToggleMobile');
+  if (toggle) toggle.textContent = current === 'en' ? 'ID' : 'EN';
+  if (toggleMobile) toggleMobile.textContent = current === 'en' ? 'ID' : 'EN';
+  localStorage.setItem('siteLang', current);
+}
+
+const savedLang = localStorage.getItem('siteLang') || 'id';
+applyLanguage(savedLang);
+
+const langToggle = document.getElementById('langToggle');
+if (langToggle) {
+  langToggle.addEventListener('click', () => applyLanguage(localStorage.getItem('siteLang') === 'en' ? 'id' : 'en'));
+}
+const langToggleMobile = document.getElementById('langToggleMobile');
+if (langToggleMobile) {
+  langToggleMobile.addEventListener('click', () => applyLanguage(localStorage.getItem('siteLang') === 'en' ? 'id' : 'en'));
+}
+
 function toggleMenu() {
   const m = document.getElementById('mob');
   m.style.display = m.style.display === 'block' ? 'none' : 'block';
